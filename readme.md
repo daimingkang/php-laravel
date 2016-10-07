@@ -47,6 +47,44 @@
 php artisan est:install
 ```
 
+### 链接入口
+
+* 首页地址：www.abc.com（你配置的域名）
+* 管理后台：www.abc.com/admin
+
+在开发环境下，直接访问后台地址即可登录 1 号用户。（请保证env里面是本地环境APP_ENV=local）
+
+至此, 安装完成。
+### 必要的配置
+## 1.邮件
+注册账号http://sendcloud.sohu.com/
+#### 修改.env中这些信息
+```
+MAIL_DRIVER=sendcloud
+SEND_CLOUD_USER=php@laravel
+SEND_CLOUD_KEY=
+MAIL_DRIVER=smtp
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=ccmknt@qq.com
+MAIL_FROM_NAME=PHP-Laravel社区
+MAIL_HOST=smtp.qq.com
+MAIL_OPEN=1
+MAIL_PASSWORD=
+MAIL_PORT=465
+MAIL_SENDMAIL=/usr/sbin/sendmail -bs
+MAIL_USERNAME=ccmknt@qq.com
+```
+#### 修改\app\Phphub\Handler\EmailHandler.php 文件中的邮件模板
+```
+$message->getSwiftMessage()->setBody(new SendCloudTemplate('template_active', [
+                'name' => $user->name,
+                'url'  => url('verification', $user->verification_token).'?email='.urlencode($user->email),
+            ]));
+ ``` 
+ 这里的template_active是你在sendcloud中的模板名称
+ 
+## 2.文件上传
+ 。。。。更新中
 ### 前端工具集安装
 
 > 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可直接跳过直达 `链接入口` 部分。
@@ -78,15 +116,6 @@ gulp
 ```shell
 gulp watch
 ```
-
-### 链接入口
-
-* 首页地址：www.abc.com（你配置的域名）
-* 管理后台：www.abc.com/admin
-
-在开发环境下，直接访问后台地址即可登录 1 号用户。（请保证env里面是本地环境APP_ENV=local）
-
-至此, 安装完成。
 
 ## 扩展包描述
 
