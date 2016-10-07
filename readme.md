@@ -25,47 +25,19 @@
 
 克隆源代码到本地：
 
-    > git clone https://github.com/summerblue/phphub5.git
+    > git clone git@github.com:daimingkang/php-laravel.git
 
-#### 2. 配置本地的 Homestead 环境
+#### 2. 配置环境
 
-1). 运行以下命令编辑 Homestead.yaml 文件：
-
-```shell
-homestead edit
-```
-
-2). 加入对应修改，如下所示：
-
-```
-folders:
-    - map: ~/my-path/phphub5/ # 你本地的项目目录地址
-      to: /home/vagrant/phphub5
-sites:
-    - map: phphub5.app
-      to: /home/vagrant/phphub5/public
-
-databases:
-    - phphub5
-```
-
-3). 应用修改
-
-修改完成后保存，然后执行以下命令应用配置信息修改：
-
-```shell
-homestead provision
-```
-
-> 注意：有时候你需要重启才能看到应用。运行 `homestead halt` 然后是 `homestead up` 进行重启。
+域名解析根public目录
 
 #### 3. 安装扩展包依赖
 
     > composer install
 
-#### 4. 生成配置文件
+#### 4. 修改配置文件
 
-    > cp .env.example .env
+    > .env
 
 #### 5. 使用安装命令
 
@@ -74,14 +46,6 @@ homestead provision
 ```shell
 php artisan est:install
 ```
-
-> 更多信息，请查阅 ESTInstallCommand
-
-#### 6. 配置 hosts 文件
-
-主机里:
-
-    echo "192.168.10.10   phphub5.app" | sudo tee -a /etc/hosts
 
 ### 前端工具集安装
 
@@ -117,10 +81,10 @@ gulp watch
 
 ### 链接入口
 
-* 首页地址：http://phphub5.app/
-* 管理后台：http://phphub5.app/admin
+* 首页地址：www.abc.com（你配置的域名）
+* 管理后台：www.abc.com/admin
 
-在开发环境下，直接访问后台地址即可登录 1 号用户。
+在开发环境下，直接访问后台地址即可登录 1 号用户。（请保证env里面是本地环境APP_ENV=local）
 
 至此, 安装完成。
 
