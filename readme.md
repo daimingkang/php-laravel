@@ -4,11 +4,11 @@
 
 ## 项目概述
 
-* 产品名称：PHPHub5
-* 项目代码：PHPHub5
-* 官方地址：https://laravel-china.org/
+* 产品名称：PHP-Laravel
+* 项目代码：PHP-Laravel
+* 官方地址：https://PHP-Laravel.com
 
-[PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
+基于[PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
 
 ## 运行环境
 
@@ -18,11 +18,6 @@
 - Redis 3.0+
 - Memcached 1.4+
 
-## 开发环境部署/安装
-
-本项目代码使用 PHP 框架 [Laravel 5.1](https://doc.laravel-china.org/docs/5.1/) 开发，本地开发环境使用 [Laravel Homestead](https://doc.laravel-china.org/docs/5.1/homestead)。
-
-下文将在假定读者已经安装好了 Homestead 的情况下进行说明。如果您还未安装 Homestead，可以参照 [Homestead 安装与设置](https://doc.laravel-china.org/docs/5.1/homestead#installation-and-setup) 进行安装配置。
 
 ### 基础安装
 
