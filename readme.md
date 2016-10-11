@@ -84,7 +84,10 @@ $message->getSwiftMessage()->setBody(new SendCloudTemplate('template_active', [
  这里的template_active是你在sendcloud中的模板名称
  
 ## 2.文件上传
- 。。。。更新中
+如果设置本地储存文件储存在本地
+如果设置七牛存储会存储在七牛服务器
+具体看文件配置文件的详细配置
+`\config\filesystems.php`
 ### 前端工具集安装
 
 > 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可直接跳过直达 `链接入口` 部分。
